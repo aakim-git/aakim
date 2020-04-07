@@ -1,0 +1,213 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@font-face {
+    font-family: Chantilly-Serial;
+    src: url('../assets/chantilly-serial-bold.ttf') format('truetype');;
+}
+
+body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.nav-link {
+    color: black;
+    padding-left: 0;
+    
+}
+
+.nav-link:hover { 
+    color: #8DCBB5; 
+}
+
+.navbar-brand {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 30px;
+}
+
+#Sidebar {
+    padding-top: 3rem;
+}
+
+#About-Picture {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    shape-outside: circle(50%);
+    float: right;
+    margin: -30% -15% 0 0;
+}
+
+#About-Page {
+    height: 100vh;
+}
+
+#About-Header {
+    padding-top: 5rem;
+}
+
+#About-Name {
+    font-family: 'Chantilly-Serial';
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 80px;
+    margin: 0;
+}
+
+#About-Title {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 25px;
+    margin: 0;
+}
+
+#About-Body {
+    color: gray;
+    font-size: 20px;
+}
+
+@media (max-width:768px) {
+    .row.collapse,
+    .row.collapsing {
+        margin-left: 0 !important;
+        left: 0 !important;
+        overflow: visible;
+    }
+    
+    .row > .sidebar.collapse {
+        display: flex !important;
+        margin-left: -100% !important;
+        transition: all .25s linear;
+        position: fixed;
+        z-index: 1050;
+        max-width: 0;
+        min-width: 0;
+        flex-basis: auto;
+    }
+    
+    .row > .sidebar.collapse.show {
+        margin-left: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        min-width: initial;
+    }
+    
+    .row > .sidebar.collapsing {
+        display: flex !important;
+        margin-left: -10% !important;
+        transition: all .2s linear !important;
+        position: fixed;
+        z-index: 1050;
+        min-width: initial;
+    }
+    
+}
+
+
+
+#Work-Page {
+    height: 100vh;
+}
+
+#Work-List {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+    max-height: 100%;
+    padding: 0 20px;
+}
+
+#Work-List > * {
+    padding: 0 20px;
+}
+
+
+#Work-List img {
+    width: 800px;
+    height: 400px;
+}
+
+
+
+
+
+#Contact-Page {
+    height: 100vh;
+}
+
+#Contact-Form-Panel {
+    color: black;
+    font-family: 'Red Hat Display', sans-serif;
+    background-image: url('./images/ContactForm.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    height: 95%;
+    margin-top: 1%;
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#Contact-Form {
+    padding: 10vh 5vh 0 5vh;
+}
+
+#Contact-Form-Title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: rgba(0,0,0,0);
+    border-radius: 0;
+}
+
+#Contact-Form-Button {
+    background-color: #F4AF7D;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 900;
+    color: white;
+    border: none;
+    width: auto;
+    padding: 5px 40px;
+}
+
+
+#Contact-Information-Panel{
+    padding: 10vh 7vh 0 7vh;
+    font-size: 18px;
+}
+
+#Contact-Information-Panel > h1{
+    font-family: 'Chantilly-Serial';
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 70px;
+}
+
+#Contact-Blurb {
+    color: gray;
+    font-family: Helvetica;
+    
+}
+
+#Contact-Information {
+    padding-top: 7vh;
+    font-family: Helvetica;
+    font-size: 30px;
+}
+
+
+
+
