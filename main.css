@@ -150,7 +150,7 @@ body::-webkit-scrollbar {
     background-color: #0ae;
     background-image: -webkit-gradient(linear, 0 0, 0 100%,
                        color-stop(.5, white),
-                       color-stop(.5, gray), to(black));
+                       color-stop(.5, lightgray), to(lightgray));
 }
 
 
