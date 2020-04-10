@@ -1,17 +1,31 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {
     font-family: Chantilly-Serial;
-    src: url('../assets/chantilly-serial-bold.ttf') format('truetype');;
+    src: url('./assets/fonts/chantilly-serial-bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: Apercu-Light;
+    src: url('./assets/fonts/Apercu Light.otf') format('truetype');
+}
+@font-face {
+    font-family: Apercu-Regular;
+    src: url('./assets/fonts/Apercu Regular.otf') format('truetype');
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    overflow: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 
-body::-webkit-scrollbar { /* WebKit */
+body::-webkit-scrollbar { 
     width: 0;
     height: 0;
 }
@@ -19,7 +33,7 @@ body::-webkit-scrollbar { /* WebKit */
 .nav-link {
     color: black;
     padding-left: 0;
-    
+    font-size: 15px;
 }
 
 .nav-link:hover { 
@@ -36,12 +50,13 @@ body::-webkit-scrollbar { /* WebKit */
 }
 
 #About-Picture {
-    width: 500px;
-    height: 500px;
+    max-width: 30%;
+    max-height: 40%;
     object-fit: cover;
-    shape-outside: circle(50%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     float: right;
-    margin: -30% -15% 0 0;
+    margin: -10% 0 0 0;
 }
 
 #About-Page {
@@ -50,18 +65,18 @@ body::-webkit-scrollbar { /* WebKit */
 
 #About-Header {
     padding-top: 5rem;
+    margin-left: 0;
 }
 
 #About-Name {
     font-family: 'Chantilly-Serial';
     letter-spacing: 2px;
-    font-weight: 100;
     font-size: 80px;
     margin: 0;
 }
 
 #About-Title {
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 25px;
     margin: 0;
 }
@@ -69,6 +84,7 @@ body::-webkit-scrollbar { /* WebKit */
 #About-Body {
     color: gray;
     font-size: 20px;
+    font-family: 'Apercu-Light';
 }
 
 @media (max-width:768px) {
@@ -119,19 +135,118 @@ body::-webkit-scrollbar { /* WebKit */
     flex-wrap: nowrap;
     overflow-y: scroll;
     max-height: 100%;
-    padding: 0 20px;
+    position: relative;
 }
 
-#Work-List > * {
-    padding: 0 20px;
+#Work-List::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+#Work-List::-webkit-scrollbar {
+    width: 0px;
+}
+
+#Work-List::-webkit-scrollbar-thumb {
+    background-color: #0ae;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+                       color-stop(.5, white),
+                       color-stop(.5, gray), to(black));
 }
 
 
-#Work-List img {
-    width: 800px;
-    height: 400px;
+.project {
+    padding: 40px;
+    position: relative;
 }
 
+#Work-List:first-child::after {
+    content: ' ';
+    width: 0.5px;
+    height: 4em;
+    background-color: #bdbdbd;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-shadow: 0 4px 10px 0.3px gray;
+}
+
+.project > h1 {
+    font-size: 25px;
+    padding-top: 20px;
+    font-family: 'Apercu-Light', sans-serif;
+}
+
+.project > p {
+    font-size: 18px;
+    font-family: 'Apercu-Light', sans-serif;
+    color: gray;
+}
+
+.languages {
+    padding-top: 10%;
+}
+
+.languages > * {
+    font-size: 15px;
+    margin-right: 10px;
+    padding: 0 10px; 
+    border: 1px solid #ac7339;
+}
+
+.project-image {
+    width: 600px;
+    height: 300px;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1;
+
+
+}
+
+.image-wrapper:hover .overlay .buttons a {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+.image-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 20%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
+}
+
+.image-wrapper .overlay a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 23px;
+    line-height: 1;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    margin: 4px;
+}
+
+.image-wrapper .overlay a:hover {
+    text-decoration: none;
+}
+
+.image-wrapper .overlay:hover a {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
 
 
 
@@ -143,50 +258,50 @@ body::-webkit-scrollbar { /* WebKit */
 #Contact-Form-Panel {
     color: black;
     font-family: 'Red Hat Display', sans-serif;
-    background-image: url('./images/ContactForm.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     position: relative;
     display: block;
     height: 95%;
-    margin-top: 1%;
-    
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0 10vh 0 0;
 }
 
 
 #Contact-Form {
-    padding: 10vh 5vh 0 5vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    padding: 8vh 7vh 7vh 7vh;
+    background-image: url('./images/ContactForm.jpg');
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #Contact-Form-Title {
     margin: 0;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     letter-spacing: 2px;
 }
 
 .form-control {
+    font-size: 12px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     background-color: rgba(0,0,0,0);
     border-radius: 0;
 }
 
 #Contact-Form-Button {
-    background-color: #F4AF7D;
+    background-color: black;
     font-family: 'Red Hat Display', sans-serif;
-    font-weight: 900;
     color: white;
     border: none;
     width: auto;
-    padding: 5px 40px;
+    padding: 3px 40px;
 }
 
 
 #Contact-Information-Panel{
     padding: 10vh 7vh 0 7vh;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #Contact-Information-Panel > h1{
@@ -197,17 +312,23 @@ body::-webkit-scrollbar { /* WebKit */
 }
 
 #Contact-Blurb {
-    color: gray;
-    font-family: Helvetica;
-    
+    color: #424242;
+    font-family: 'Apercu-Light';
 }
 
 #Contact-Information {
-    padding-top: 7vh;
-    font-family: Helvetica;
-    font-size: 30px;
+    font-family: 'Calibri';
+    font-size: 18px;
+    margin-top: 20%;
 }
 
+#Contact-Buttons > * {
+    margin-right: 20px;
+}
 
+#Contact-Buttons img {
+    width: 30px;
+    height: 30px;
+}
 
 
