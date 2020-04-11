@@ -51,7 +51,7 @@ $(window).on("load", function() {
         
         $(".fader-750").each( function() {
             var objectBottom = $(this).offset().top + $(this).outerHeight();
-            if (objectBottom < windowBottom && objectBottom > windowTop) { 
+            if (objectBottom < windowBottom || objectBottom > windowTop) { 
                 if ($(this).css("opacity")==0 ) {
                     $(this).fadeTo(750,1);
                 }
@@ -96,11 +96,13 @@ $(window).on("load", function() {
 
 
 function scrollHorizontally(e) {
+    if ($(window).width() > 620) {  
         e = window.event || e;
         var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
         document.getElementById('Work-List').scrollLeft -= (delta*40); // Multiplied by 40
         revealProjects();
         e.preventDefault();
+    }
 }
 
 function revealProjects() {

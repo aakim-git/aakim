@@ -14,6 +14,18 @@
     src: url('./assets/fonts/Apercu Regular.otf') format('truetype');
 }
 
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
+
+a:hover {
+     text-decoration:none;  
+}
 
 html {
     scroll-behavior: smooth;
@@ -28,6 +40,10 @@ body {
 body::-webkit-scrollbar { 
     width: 0;
     height: 0;
+}
+
+#Mobile-Navbar {
+    display: none;
 }
 
 .nav-link {
@@ -65,18 +81,17 @@ body::-webkit-scrollbar {
 
 #About-Header {
     padding-top: 5rem;
-    margin-left: 0;
 }
 
 #About-Name {
     font-family: 'Chantilly-Serial';
     letter-spacing: 2px;
-    font-size: 80px;
+    font-size: 70px;
     margin: 0;
 }
 
 #About-Title {
-    font-family: 'Calibri', sans-serif;
+    font-family: 'Apercu-Regular', sans-serif;
     font-size: 25px;
     margin: 0;
 }
@@ -85,6 +100,7 @@ body::-webkit-scrollbar {
     color: gray;
     font-size: 20px;
     font-family: 'Apercu-Light';
+    padding-right: 30%;
 }
 
 @media (max-width:768px) {
@@ -128,6 +144,10 @@ body::-webkit-scrollbar {
 
 #Work-Page {
     height: 100vh;
+}
+
+#Work-Page-Title {
+    display: none;
 }
 
 #Work-List {
@@ -175,7 +195,7 @@ body::-webkit-scrollbar {
 .project > h1 {
     font-size: 25px;
     padding-top: 20px;
-    font-family: 'Apercu-Light', sans-serif;
+    font-family: 'Apercu-Regular', sans-serif;
 }
 
 .project > p {
@@ -193,6 +213,7 @@ body::-webkit-scrollbar {
     margin-right: 10px;
     padding: 0 10px; 
     border: 1px solid #ac7339;
+    border-radius: 5px;
 }
 
 .project-image {
@@ -257,7 +278,6 @@ body::-webkit-scrollbar {
 
 #Contact-Form-Panel {
     color: black;
-    font-family: 'Red Hat Display', sans-serif;
     position: relative;
     display: block;
     height: 95%;
@@ -269,16 +289,18 @@ body::-webkit-scrollbar {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     
-    padding: 8vh 7vh 7vh 7vh;
+    font-family: 'Apercu-Light', sans-serif;
+    padding: 8vh 5vh 7vh 5vh;
     background-image: url('./images/ContactForm.jpg');
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #Contact-Form-Title {
     margin: 0;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .form-control {
@@ -331,4 +353,238 @@ body::-webkit-scrollbar {
     height: 30px;
 }
 
+@media (max-width:930px) {
+    #Contact-Form {
+        padding: 8vh 3vh 7vh 3vh;
+    }
+}
+
+
+@media (max-width:870px) {
+
+    
+    #About-Name {
+        font-size: 70px;
+    }
+    #About-Picture {
+        display: none !important;
+    }
+    
+    #About-Body {
+        padding-right: 5%;
+    }
+    
+    #Contact-Information {
+        margin-top: 10%;
+    }
+    
+    #Contact-Information-Panel {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    
+    #Contact-Form {
+        display: none !important;
+    }
+}
+
+
+/*---Media Queries --*/
+@media (max-width: 620px) {
+    .col-10 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    
+    body {
+        overflow: visible !important;
+    }
+    
+    #Mobile-Navbar {
+        display: flex !important;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+        z-index: 999;
+    }
+    
+    .fa-1x {
+        font-size: 1.5rem;
+    }
+    
+    #Sidebar {
+        display: none !important;
+    }
+    
+    #About-Page {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;   
+    }
+    
+    #About-Name {
+        font-size: 50px;
+    }
+    
+    #About-Body {
+        flex-basis: 0;
+        padding-right: 0;
+    }
+    
+    #About-Header {
+        position: relative;
+        padding-top: 1em;
+    }
+    
+    
+    #Work-Page {
+        height: auto;
+    }
+    
+    #Work-Page-Title {
+        display: block;
+        font-size: 20px;
+        font-family: 'Apercu-Regular', sans-serif;
+        color: black;
+        margin: 0;
+        padding-left: 10px;
+        
+    }
+    
+    #Work-List:first-child::after {
+        width: 0px;
+    }
+
+    #Work-List {
+        flex-wrap: wrap;
+        overflow: visible;
+        max-height: 100%;
+    }
+    
+    .project > h1 {
+        font-size: 15px;
+        padding-top: 20px;
+        font-family: 'Apercu-Regular', sans-serif;
+    }
+
+    .project > p {
+        font-size: 13px;
+        font-family: 'Apercu-Light', sans-serif;
+        color: gray;
+    }
+
+    .languages {
+        padding-top: 1%;
+    }
+
+    .languages > * {
+        font-size: 10px;
+        margin-right: 10px;
+        padding: 0 10px; 
+        border: 1px solid #ac7339;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .image-wrapper {
+        position: relative;
+    }
+
+    .image-wrapper:hover .overlay {
+        opacity: 1;
+
+
+    }
+
+    .image-wrapper:hover .overlay .buttons a {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    .image-wrapper .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-top: 20%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        -webkit-transition: opacity 400ms;
+        transition: opacity 400ms;
+    }
+
+    .image-wrapper .overlay a {
+        display: inline-block;
+        color: #fff;
+        padding: 10px 23px;
+        line-height: 1;
+        border: 1px solid #fff;
+        border-radius: 0px;
+        margin: 4px;
+    }
+
+    .image-wrapper .overlay a:hover {
+        text-decoration: none;
+    }
+
+    .image-wrapper .overlay:hover a {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+
+    
+    #Contact-Page {
+        height: auto;
+        padding-bottom: 7vh;
+        color: white;
+        background-color: black;
+    }
+    
+    #Contact-Information {
+        margin: 0;
+        flex-basis: 60%;
+    }
+    
+    #Contact-Buttons {
+        flex-basis: 40%;
+    }
+    
+    #Contact-Information-Panel {
+        padding-top: 5vh;
+        display: flex;
+    }
+    
+    
+    
+    
+    #Contact-Information-Panel > h1 {
+        display: none !important;
+    }
+    
+    #Contact-Blurb {
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 440px) {
+    #About-Name {
+        font-size: 30px;
+    }
+    
+    #About-Title {
+        font-size: 20px;
+    }
+    
+    #About-Body {
+        font-size: 15px;
+    }
+}
 
