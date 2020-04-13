@@ -497,7 +497,7 @@ body::-webkit-scrollbar {
     #About-Page {
         display: flex;
         justify-content: center;
-        flex-direction: column;   
+        flex-direction: column;  
     }
     
     #About-Name {
@@ -664,6 +664,10 @@ body::-webkit-scrollbar {
     
     #About-Body {
         font-size: 15px;
+    }
+    
+    #About-Page {
+        margin-top:-10%;
     }
 }
 
