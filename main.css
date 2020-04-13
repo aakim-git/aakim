@@ -270,7 +270,6 @@ body::-webkit-scrollbar {
 
 .project > h1 {
     font-size: 20px;
-    padding-top: 20px;
     font-family: 'Apercu-Regular', sans-serif;
 }
 
@@ -282,14 +281,15 @@ body::-webkit-scrollbar {
 }
 
 .languages {
-    padding-top: 10%;
+    margin-top: 7px;
 }
 
 .languages > * {
-    font-size: 15px;
+    background-color: black;
+    font-size: 10px;
     margin-right: 10px;
     padding: 0 10px; 
-    border: 1px solid #ac7339;
+    color: white;
     border-radius: 5px;
 }
 
@@ -306,8 +306,7 @@ body::-webkit-scrollbar {
 
 .image-wrapper:hover .overlay {
     opacity: 1;
-
-
+    color: white;
 }
 
 .image-wrapper:hover .overlay .buttons a {
@@ -544,7 +543,7 @@ body::-webkit-scrollbar {
 
     .project > h1 {
         font-size: 15px;
-        padding-top: 20px;
+        padding-top: 10px;
         font-family: 'Apercu-Regular', sans-serif;
     }
 
@@ -562,7 +561,6 @@ body::-webkit-scrollbar {
         font-size: 10px;
         margin-right: 10px;
         padding: 0 10px; 
-        border: 1px solid #ac7339;
     }
 
     .project-image {
@@ -577,8 +575,6 @@ body::-webkit-scrollbar {
 
     .image-wrapper:hover .overlay {
         opacity: 1;
-
-
     }
 
     .image-wrapper:hover .overlay .buttons a {
