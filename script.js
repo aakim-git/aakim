@@ -22,7 +22,7 @@ $(window).on("load", function() {
         var windowTop = $(this).scrollTop();
         
         $(".fader-300").each( function() {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
+            var objectBottom = $(this).offset().top + $(this).outerHeight()/2;
             if (objectBottom < windowBottom && objectBottom > windowTop) { 
                 if ($(this).css("opacity")==0 ) {
                     $(this).fadeTo(300,1);
@@ -36,7 +36,7 @@ $(window).on("load", function() {
         });
         
         $(".fader-500").each( function() {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
+            var objectBottom = $(this).offset().top + $(this).outerHeight()/2;
             if (objectBottom < windowBottom && objectBottom > windowTop) { 
                 if ($(this).css("opacity")==0 ) {
                     $(this).fadeTo(500,1);
@@ -50,8 +50,8 @@ $(window).on("load", function() {
         });
         
         $(".fader-750").each( function() {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
-            if (objectBottom < windowBottom || objectBottom > windowTop) { 
+            var objectBottom = $(this).offset().top + $(this).outerHeight()/2;
+            if (objectBottom < windowBottom && objectBottom > windowTop) { 
                 if ($(this).css("opacity")==0 ) {
                     $(this).fadeTo(750,1);
                 }
@@ -64,7 +64,7 @@ $(window).on("load", function() {
         });
         
         $(".fader-1000").each( function() {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
+            var objectBottom = $(this).offset().top + $(this).outerHeight()/2;
             if (objectBottom < windowBottom && objectBottom > windowTop) { 
                 if ($(this).css("opacity")==0 ) {
                     $(this).fadeTo(1000,1);
@@ -78,7 +78,7 @@ $(window).on("load", function() {
         });
         
         $(".fader-2000").each( function() {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
+            var objectBottom = $(this).offset().top + $(this).outerHeight()/2;
             if (objectBottom < windowBottom && objectBottom > windowTop) { 
                 if ($(this).css("opacity")==0 ) {
                     $(this).fadeTo(2000,1);
@@ -136,3 +136,49 @@ function revealProjects() {
         }
     });
 }
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    var form = document.getElementById("Contact-Form");
+    var button = document.getElementById("Form-Button-Text");
+    var loading = document.getElementById("loadingio-spinner-radio-n0wlxvx8db");
+
+    // Success and Error functions for after the form is submitted
+    function success() {
+        form.reset();
+        loading.style.display = "none";
+        button.innerHTML = "SENT!";
+    }
+
+    function error() {
+        loading.style.display = "none";
+        button.innerHTML = "ERROR";
+    }
+
+    // handle the form submission event
+    form.addEventListener("submit", function(ev) {
+            ev.preventDefault();
+            var data = new FormData(form);
+            loading.style.display = "inline-block";
+            button.innerHTML = "";
+            ajax(form.method, form.action, data, success, error);
+        });
+    });
+
+    // helper function for sending an AJAX request
+    function ajax(method, url, data, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                success(xhr.response, xhr.responseType);
+            } 
+            
+            else {
+                error(xhr.status, xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
+    }
