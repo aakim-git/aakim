@@ -176,9 +176,9 @@ body::-webkit-scrollbar {
 }
 
 #About-Body {
-    color: black;
-    font-size: 23px;
-    font-family: 'Alegreya Sans', sans-serif;
+    color: #424141;
+    font-size: 20px;
+    font-family: 'Apercu-Light';
     padding-right: 30%;
 }
 
